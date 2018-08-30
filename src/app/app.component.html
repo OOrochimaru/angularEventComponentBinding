@@ -5,7 +5,13 @@
   <hr>
   <div class="row">
     <div class="col-xs-12">
-        <app-server-element *ngFor="let s of serverElements" [srvElement]="s"></app-server-element>
+        <app-server-element *ngFor="let s of serverElements" [srvElement]="s">
+          <p>
+            <strong *ngIf="s.type === 'Server'" style="color: red">{{ s.content }}</strong>
+            <em *ngIf="s.type === 'Blueprint'">{{ s.content }}</em>
+          </p>
+
+        </app-server-element>
     </div>
   </div>
 </div>
